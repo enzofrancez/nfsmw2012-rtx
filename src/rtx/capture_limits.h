@@ -1,0 +1,4 @@
+#pragma once
+#define RTX_CAPTURE_MAX_VERTICES 6000000
+#define RTX_STRINGIFY_INNER(x) #x
+#define RTX_STRINGIFY(x) RTX_STRINGIFY_INNER(x)

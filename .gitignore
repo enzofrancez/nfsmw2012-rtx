@@ -1,0 +1,16 @@
+/dist/
+/artifacts/
+/payload/
+/.nfsmw-last-install.json
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.log
+*.clip4
+*.rgba
+*.r32
+**/backup/
+**/backups/
+.vs/

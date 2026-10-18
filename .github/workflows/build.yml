@@ -1,0 +1,25 @@
+name: Build Windows
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build addons and DXR shaders
+        shell: powershell
+        run: .\scripts\Build.ps1
+      - name: Installer regression tests
+        shell: powershell
+        run: .\tests\Installer.Tests.ps1
+      - name: Package
+        shell: powershell
+        run: .\scripts\Package.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NFSMW2012-RTX-Windows
+          path: artifacts/*
